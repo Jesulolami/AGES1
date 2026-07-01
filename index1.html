@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalLink Logistics | Premium International Freight Forwarding</title>
+    <meta name="description" content="GlobalLink Logistics delivers trusted international import/export freight forwarding, customs brokerage, and live cargo tracking solutions.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --navy: #06132e;
+            --slate: #2f3845;
+            --steel: #5e6a7a;
+            --gold: #ee8f2a;
+            --gold-dark: #c47d1c;
+            --white: #f9fafb;
+            --surface: #111b34;
+            --surface-soft: #1b2945;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .page-section {
+            padding-top: 6.5rem;
+            padding-bottom: 6rem;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: #ffb648;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(6,19,46,0.84) 0%, rgba(6,19,46,0.88) 45%, rgba(6,19,46,0.96) 100%);
+        }
+
+        .hero-visual {
+            min-height: 88vh;
+            background: url('https://images.unsplash.com/photo-1518576772487-0b4d5ec51130?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            position: relative;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(6,19,46,0.65);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(10px);
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 0.5rem;
+            background: var(--gold);
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2.2rem;
+            width: 0.25rem;
+            height: calc(100% - 2.2rem);
+            background: rgba(238,143,42,0.35);
+        }
+
+        .stepper-card .step-node {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .stepper-card .step-node.active {
+            background-color: rgba(238,143,42,0.12);
+            transform: translateY(-2px);
+        }
+
+        .stepper-card .step-progress {
+            height: 0.35rem;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .stepper-card .step-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold), #ffba6b);
+            transition: width 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+        }
+
+        .footer-newsletter input {
+            border-radius: 999px;
+        }
+
+        .footer-newsletter button {
+            border-radius: 999px;
+        }
+
+        .page-alert {
+            animation: fadeIn 0.4s ease both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 767px) {
+            .hero-visual {
+                min-height: 72vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <span class="me-2 badge text-bg-warning text-dark">GL</span>
+                    <span>GlobalLink Logistics</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#globalNav" aria-controls="globalNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="globalNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" data-nav="home" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav="about" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav="services" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav="tracking" href="#tracking">Tracking</a></li>
+                        <li class="nav-item"><a class="nav-link" data-nav="calculator" href="#calculator">Calculator</a></li>
+                    </ul>
+                    <a class="btn btn-warning btn-sm text-dark ms-lg-3" href="#calculator">Get a Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5">
+        <section id="home" class="hero-visual d-flex align-items-center hero-overlay">
+            <div class="container py-5 hero-content text-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <span class="badge bg-warning text-dark mb-3">Premium Global Forwarding</span>
+                        <h1 class="display-5 fw-bold lh-sm">Trusted import/export logistics for enterprise supply chains.</h1>
+                        <p class="lead text-white-75 mt-4">GlobalLink Logistics delivers premium freight forwarding, customs brokerage and warehousing with a deep navy corporate platform built for international trade.</p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                            <a href="#calculator" class="btn btn-warning btn-lg text-dark px-4">Calculate Shipping</a>
+                            <a href="#tracking" class="btn btn-outline-light btn-lg px-4">Track Your Cargo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-white">
+            <div class="container">
+                <div class="row text-center gy-4">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card rounded-4 p-4 text-white bg-navy shadow-sm">
+                            <h2 class="h1 mb-1">50+</h2>
+                            <p class="mb-0">Countries Served</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card rounded-4 p-4 text-white bg-secondary shadow-sm">
+                            <h2 class="h1 mb-1">10k+</h2>
+                            <p class="mb-0">Tons Shipped</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card rounded-4 p-4 text-white bg-dark shadow-sm">
+                            <h2 class="h1 mb-1">24/7</h2>
+                            <p class="mb-0">Global Operations</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card rounded-4 p-4 text-white bg-slate shadow-sm" style="background:linear-gradient(180deg,rgba(47,56,69,.92),rgba(6,19,46,.9));">
+                            <h2 class="h1 mb-1">98%</h2>
+                            <p class="mb-0">On-time Deliveries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-light" id="services-summary">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <span class="text-uppercase text-warning fw-bold small">Solutions at scale</span>
+                        <h2 class="mt-3">Focused services that support every lane of international trade.</h2>
+                        <p class="text-muted mt-3">From ocean freight to customs brokerage, our modular service model is designed for corporate import/export teams and global manufacturers.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card border-0 h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="badge bg-warning text-dark mb-3"><i class="fa-solid fa-ship"></i></div>
+                                <h3 class="h5">Ocean Freight</h3>
+                                <p class="text-muted">Full container and LCL ocean forwarding with port-to-port planning and carrier selection.</p>
+                                <a href="#services" class="text-warning text-decoration-none">View service <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card border-0 h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="badge bg-warning text-dark mb-3"><i class="fa-solid fa-plane"></i></div>
+                                <h3 class="h5">Air Freight</h3>
+                                <p class="text-muted">Premium air cargo routes for urgent deliveries and consolidated global air freight flow.</p>
+                                <a href="#services" class="text-warning text-decoration-none">View service <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card border-0 h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="badge bg-warning text-dark mb-3"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                <h3 class="h5">Customs Brokerage</h3>
+                                <p class="text-muted">Trusted compliance and customs clearance across major trade zones with full documentation support.</p>
+                                <a href="#services" class="text-warning text-decoration-none">View service <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-white" id="about">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <span class="text-uppercase text-warning fw-bold small">About GlobalLink</span>
+                        <h2 class="mt-3">Building secure shipping corridors since 2009.</h2>
+                        <p class="text-muted">GlobalLink Logistics partners with importers, exporters and global brands to move freight confidently across continents, combining legal compliance, risk management and digital shipment visibility.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="card border-0 shadow-sm p-3 h-100">
+                                    <div class="fw-bold text-warning mb-2">Compliance</div>
+                                    <p class="mb-0 text-muted">End-to-end customs and trade compliance for every market we serve.</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card border-0 shadow-sm p-3 h-100">
+                                    <div class="fw-bold text-warning mb-2">Reliability</div>
+                                    <p class="mb-0 text-muted">Dedicated operations teams monitor shipments 24/7 to keep cargo moving.</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card border-0 shadow-sm p-3 h-100">
+                                    <div class="fw-bold text-warning mb-2">Global Reach</div>
+                                    <p class="mb-0 text-muted">Multiple hubs in APAC, Europe and Americas with strategic port coverage.</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card border-0 shadow-sm p-3 h-100">
+                                    <div class="fw-bold text-warning mb-2">Technology</div>
+                                    <p class="mb-0 text-muted">Modern digital tools for quoting, tracking and shipment documentation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-5 gy-4">
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="h5">Our Story</h3>
+                                <p class="text-muted">GlobalLink Logistics began as a boutique freight team serving cross-border trading houses. Today we manage multimodal networks spanning ocean, air and inland distribution, supported by customs specialists, insurance partners and corporate supply chain experts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="h5">Executive Leadership</h3>
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <div class="border rounded-4 p-3 h-100">
+                                            <div class="fw-bold">Aisha Bello</div>
+                                            <p class="text-muted small mb-0">CEO & Founder</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="border rounded-4 p-3 h-100">
+                                            <div class="fw-bold">Marcus Ong</div>
+                                            <p class="text-muted small mb-0">Chief Operations Officer</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="border rounded-4 p-3 h-100">
+                                            <div class="fw-bold">Nina Patel</div>
+                                            <p class="text-muted small mb-0">Head of Global Compliance</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="border rounded-4 p-3 h-100">
+                                            <div class="fw-bold">Luca Romano</div>
+                                            <p class="text-muted small mb-0">Director of Logistics Strategy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-5">
+                    <div class="col-lg-4">
+                        <div class="text-uppercase fw-bold text-warning mb-3">Our Core Process</div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="process-step">
+                            <h5>01. Consult & Route Planning</h5>
+                            <p class="text-muted">We assess cargo profiles, origin and destination requirements, then build compliant transit plans.</p>
+                        </div>
+                        <div class="process-step">
+                            <h5>02. Documentation & Customs</h5>
+                            <p class="text-muted">Customs paperwork, licenses and clearance declarations are prepared before shipment departure.</p>
+                        </div>
+                        <div class="process-step">
+                            <h5>03. Freight Execution</h5>
+                            <p class="text-muted">Cargo moves through ocean or air corridors with real-time monitoring and carrier coordination.</p>
+                        </div>
+                        <div class="process-step mb-0">
+                            <h5>04. Delivery & Review</h5>
+                            <p class="text-muted">Final delivery is confirmed and performance feedback is collected to improve future freight cycles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-light" id="services">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <span class="text-uppercase text-warning fw-bold small">Expert services</span>
+                        <h2 class="mt-3">Designed for complex international import/export operations.</h2>
+                        <p class="text-muted mt-3">Modern freight services delivered with premium account management and strategic trade support.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100 border-0 shadow-sm p-4">
+                            <div class="mb-4 text-warning fs-2"><i class="fa-solid fa-ship"></i></div>
+                            <h3 class="h5">Ocean Freight</h3>
+                            <p class="text-muted">FCL and LCL ocean forwarding combined with vessel selection and port coordination.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100 border-0 shadow-sm p-4">
+                            <div class="mb-4 text-warning fs-2"><i class="fa-solid fa-plane-departure"></i></div>
+                            <h3 class="h5">Air Freight</h3>
+                            <p class="text-muted">High-priority air cargo options with premium security handling and time-sensitive routing.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100 border-0 shadow-sm p-4">
+                            <div class="mb-4 text-warning fs-2"><i class="fa-solid fa-file-invoice"></i></div>
+                            <h3 class="h5">Customs Brokerage</h3>
+                            <p class="text-muted">Regulatory clearance services across global trade zones with bonded inventory support.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100 border-0 shadow-sm p-4">
+                            <div class="mb-4 text-warning fs-2"><i class="fa-solid fa-warehouse"></i></div>
+                            <h3 class="h5">Warehousing</h3>
+                            <p class="text-muted">Secure storage, cross-dock and inventory management for inbound and outbound freight.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100 border-0 shadow-sm p-4">
+                            <div class="mb-4 text-warning fs-2"><i class="fa-solid fa-sitemap"></i></div>
+                            <h3 class="h5">Supply Chain Sourcing</h3>
+                            <p class="text-muted">Strategic sourcing and vendor logistics for global manufacturing and retail importers.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-white" id="tracking">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <span class="text-uppercase text-warning fw-bold small">Live Cargo Tracking</span>
+                        <h2 class="mt-3">Track your shipment through every milestone.</h2>
+                        <p class="text-muted">Enter your tracking number to view progress from order receipt through customs clearance and final delivery.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-dark text-white"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input id="tracking-input" type="text" class="form-control border-0" placeholder="Enter tracking code e.g. GLL-12345" aria-label="Tracking number">
+                            <button class="btn btn-warning text-dark" type="button" onclick="lookupTracking()">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tracking-alert" class="alert alert-danger d-none page-alert" role="alert"></div>
+                <div id="tracking-result" class="card border-0 shadow-sm stepper-card d-none">
+                    <div class="card-body">
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-8">
+                                <h5 class="mb-1">Shipment Status</h5>
+                                <p class="text-muted mb-0">Tracking number <span id="tracking-number" class="fw-semibold"></span></p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <span class="badge bg-success">Current stage: <span id="tracking-stage"></span></span>
+                            </div>
+                        </div>
+                        <div class="stepper-card p-4 rounded-4 bg-light">
+                            <div class="stepper-row d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+                                <div class="step-node text-center p-3 rounded-4 flex-fill" id="step-1">
+                                    <div class="mb-2 text-warning"><i class="fa-solid fa-receipt"></i></div>
+                                    <strong>Order Received</strong>
+                                </div>
+                                <div class="step-node text-center p-3 rounded-4 flex-fill" id="step-2">
+                                    <div class="mb-2 text-warning"><i class="fa-solid fa-truck-fast"></i></div>
+                                    <strong>In Transit</strong>
+                                </div>
+                                <div class="step-node text-center p-3 rounded-4 flex-fill" id="step-3">
+                                    <div class="mb-2 text-warning"><i class="fa-solid fa-passport"></i></div>
+                                    <strong>Customs Clearance</strong>
+                                </div>
+                                <div class="step-node text-center p-3 rounded-4 flex-fill" id="step-4">
+                                    <div class="mb-2 text-warning"><i class="fa-solid fa-house-chimney"></i></div>
+                                    <strong>Out for Delivery</strong>
+                                </div>
+                            </div>
+                            <div class="stepper-progress mb-3">
+                                <div id="stepper-fill" class="step-bar"></div>
+                            </div>
+                            <div id="tracking-log" class="list-group list-group-flush"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-secondary bg-opacity-10" id="calculator">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <span class="text-uppercase text-warning fw-bold small">Freight Calculator</span>
+                        <h2 class="mt-3">Estimate cost and transit time instantly.</h2>
+                        <p class="text-muted">Use our client-side calculator to preview shipping costs based on origin, destination, cargo type, weight and mode.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm p-4">
+                            <form id="calculator-form" onsubmit="calculateQuote(event)">
+                                <div class="mb-3">
+                                    <label for="origin" class="form-label">Origin Country</label>
+                                    <select class="form-select" id="origin" required>
+                                        <option value="" selected disabled>Select origin</option>
+                                        <option value="USA">United States</option>
+                                        <option value="GBR">United Kingdom</option>
+                                        <option value="SGP">Singapore</option>
+                                        <option value="NGA">Nigeria</option>
+                                        <option value="BRA">Brazil</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="destination" class="form-label">Destination Country</label>
+                                    <select class="form-select" id="destination" required>
+                                        <option value="" selected disabled>Select destination</option>
+                                        <option value="USA">United States</option>
+                                        <option value="GBR">United Kingdom</option>
+                                        <option value="SGP">Singapore</option>
+                                        <option value="NGA">Nigeria</option>
+                                        <option value="BRA">Brazil</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cargoType" class="form-label">Cargo Type</label>
+                                    <select class="form-select" id="cargoType" required>
+                                        <option value="" selected disabled>Select cargo type</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="textiles">Textiles</option>
+                                        <option value="general">General</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="weight" class="form-label">Weight (KG)</label>
+                                    <input type="number" class="form-control" id="weight" min="1" placeholder="e.g. 1200" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Shipping Mode</label>
+                                    <div class="d-flex gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mode" id="modeAir" value="air" checked>
+                                            <label class="form-check-label" for="modeAir">Air Freight</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mode" id="modeOcean" value="ocean">
+                                            <label class="form-check-label" for="modeOcean">Ocean Freight</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-warning text-dark w-100 py-3">Calculate Quote</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="quoteResult" class="card border-0 shadow-sm p-4 bg-white d-none">
+                            <h5 class="mb-3">Estimated Freight Quote</h5>
+                            <div class="mb-3">
+                                <span class="text-muted">Total Cost</span>
+                                <div class="fs-2 fw-bold" id="resultCost">$0.00</div>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between text-muted">
+                                <span>Mode</span>
+                                <span id="resultMode">-</span>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between text-muted">
+                                <span>Transit Time</span>
+                                <span id="resultDays">-</span>
+                            </div>
+                            <div class="mb-2 d-flex justify-content-between text-muted">
+                                <span>Base Rate</span>
+                                <span id="resultRate">-</span>
+                            </div>
+                            <div class="mb-0 d-flex justify-content-between text-muted">
+                                <span>Surcharge</span>
+                                <span id="resultSurcharge">-</span>
+                            </div>
+                        </div>
+                        <div id="quoteHint" class="card border-0 shadow-sm p-4 text-center">
+                            <p class="mb-0 text-muted">Submit origin, destination, cargo type and weight to reveal the estimated freight cost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="text-white">GlobalLink Logistics</h5>
+                    <p class="text-muted">Premium import/export and freight forwarding solutions with trusted global compliance and cargo visibility.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white">Useful Links</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#home" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="#about" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#services" class="text-muted text-decoration-none">Services</a></li>
+                        <li><a href="#tracking" class="text-muted text-decoration-none">Live Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white">Newsletter</h6>
+                    <p class="text-muted">Stay informed with premium freight insights and trade updates.</p>
+                    <form class="d-flex gap-2 footer-newsletter" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" class="form-control form-control-sm" id="newsletterEmail" placeholder="Email address" required>
+                        <button class="btn btn-warning btn-sm text-dark" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-4 pt-3 text-center text-muted small">&copy; 2026 GlobalLink Logistics. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-jnK37w6O7xT85mnU+Ru8kGq98y+jw/dxIwQpXn+zRrWOseQ4niW2RZPfxud+H5aR" crossorigin="anonymous"></script>
+    <script>
+        const trackingData = {
+            "GLL-12345": {
+                stage: "In Transit",
+                progress: 50,
+                logs: [
+                    "Cargo departed origin port and is en route to the transshipment hub.",
+                    "Customs export documents submitted and accepted.",
+                    "Security inspection completed, moving to next transit leg."
+                ]
+            }
+        };
+
+        function scrollToSection(id) {
+            const section = document.querySelector(id);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.querySelectorAll('[data-nav]').forEach(link => {
+            link.addEventListener('click', event => {
+                document.querySelectorAll('[data-nav]').forEach(nav => nav.classList.remove('active'));
+                event.currentTarget.classList.add('active');
+            });
+        });
+
+        function lookupTracking() {
+            const query = document.getElementById('tracking-input').value.trim().toUpperCase();
+            const alertBox = document.getElementById('tracking-alert');
+            const resultCard = document.getElementById('tracking-result');
+            const logGroup = document.getElementById('tracking-log');
+
+            alertBox.classList.add('d-none');
+            resultCard.classList.add('d-none');
+            logGroup.innerHTML = '';
+
+            if (!query) {
+                alertBox.textContent = 'Please enter your tracking number to proceed.';
+                alertBox.classList.remove('d-none');
+                return;
+            }
+
+            const shipment = trackingData[query];
+            if (!shipment) {
+                alertBox.textContent = 'Shipment not found. Please verify your tracking number and try again.';
+                alertBox.classList.remove('d-none');
+                return;
+            }
+
+            document.getElementById('tracking-number').textContent = query;
+            document.getElementById('tracking-stage').textContent = shipment.stage;
+            document.getElementById('stepper-fill').style.width = `${shipment.progress}%`;
+
+            const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+            steps.forEach((stepId, index) => {
+                const stepElement = document.getElementById(stepId);
+                if (!stepElement) return;
+                stepElement.classList.remove('active');
+                if (index <= 1) {
+                    stepElement.classList.add('active');
+                }
+            });
+
+            shipment.logs.forEach(log => {
+                const item = document.createElement('div');
+                item.className = 'list-group-item bg-white border-0 px-0 py-2';
+                item.textContent = log;
+                logGroup.appendChild(item);
+            });
+
+            resultCard.classList.remove('d-none');
+        }
+
+        function calculateQuote(event) {
+            event.preventDefault();
+
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const cargoType = document.getElementById('cargoType').value;
+            const weight = Number(document.getElementById('weight').value);
+            const mode = document.querySelector('input[name="mode"]:checked').value;
+            const quotePanel = document.getElementById('quoteResult');
+            const hintPanel = document.getElementById('quoteHint');
+
+            if (!origin || !destination || !cargoType || !weight || weight <= 0) {
+                alert('Please complete every field with valid values to calculate the quote.');
+                return;
+            }
+
+            if (origin === destination) {
+                alert('Origin and destination cannot be the same. Please choose two different countries.');
+                return;
+            }
+
+            const cargoFactors = {
+                electronics: 1.2,
+                agriculture: 0.9,
+                textiles: 1.0,
+                general: 1.0
+            };
+
+            const regionFactor = origin === 'USA' && destination === 'GBR' || origin === 'GBR' && destination === 'USA' ? 1.1 :
+                                 origin === 'USA' && destination === 'SGP' || origin === 'SGP' && destination === 'USA' ? 1.4 :
+                                 origin === 'GBR' && destination === 'NGA' || origin === 'NGA' && destination === 'GBR' ? 1.3 :
+                                 origin === 'BRA' && destination === 'SGP' || origin === 'SGP' && destination === 'BRA' ? 1.5 :
+                                 1.2;
+
+            const modeRates = {
+                air: { rate: 8.5, time: '3 - 5 Days' },
+                ocean: { rate: 3.1, time: '18 - 30 Days' }
+            };
+
+            const selectedMode = modeRates[mode];
+            const baseRate = selectedMode.rate * regionFactor * cargoFactors[cargoType];
+            const baseCost = weight * baseRate;
+            const surcharge = baseCost * 0.18;
+            const totalCost = baseCost + surcharge;
+
+            document.getElementById('resultCost').textContent = totalCost.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            document.getElementById('resultMode').textContent = mode === 'air' ? 'Air Freight' : 'Ocean Freight';
+            document.getElementById('resultDays').textContent = selectedMode.time;
+            document.getElementById('resultRate').textContent = baseRate.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' /kg';
+            document.getElementById('resultSurcharge').textContent = surcharge.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+            hintPanel.classList.add('d-none');
+            quotePanel.classList.remove('d-none');
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('newsletterEmail');
+            if (!emailInput.value.trim()) {
+                alert('Please enter a valid email address to subscribe.');
+                return;
+            }
+            alert(`Thank you! ${emailInput.value.trim()} has been added to the GlobalLink newsletter.`);
+            emailInput.value = '';
+        }
+    </script>
+</body>
+</html>
